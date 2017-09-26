@@ -22,7 +22,7 @@ class MRMostUsedWord(MRJob):
         yield (word, sum(counts))
 
     def reducer_count_words(self, word, counts):
-        yield None, (sum(counts), word) 
+        yield None, (word, sum(counts)) 
        # why yield None, ((word, sum(counts)) doesn't work?
 
     def reducer_find_max_word(self, _, word_count_pairs):
